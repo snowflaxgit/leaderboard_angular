@@ -1,0 +1,29 @@
+<html ng-app>
+	<head>
+        <title>Luvsboard</title>    	
+        <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+        <link href="stylesheets/bootstrap.css" rel="stylesheet" type="text/css">	
+		
+		<script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-1.9.1.js"></script>	
+        <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+        <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+        <script type="text/javascript" src="/javascripts/script.js"></script>	
+		
+    </head>
+<body>
+	<div id="outer" ng-controller="ShoppingCartCtrl"  class="container">
+		
+		<div class="row ce">
+			<div class="title"> Luvsboard </div>
+                <table border="1" >
+                    <tr ng-repeat="user in users" id="{{user._id}}">						
+                        <td>{{user.name}}</td>
+                        <td>{{user.rate}}</td>
+                    </tr>
+                </table>					
+			</div>
+		</div>
+	
+</body>
+</html>

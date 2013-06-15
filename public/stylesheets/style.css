@@ -1,0 +1,44 @@
+.rate{
+	text-align:right;	
+}
+.users{
+	margin-left:20px; 
+	float:left;
+	width:400px;	
+	border:1px solid #000000;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	padding:10px;
+}
+#fav{
+	cursor:pointer;	
+}
+.header{
+	text-align:center;
+	width:470px;	
+	margin:0 auto; 
+}
+#value{
+	float:right;
+	margin-top:-40px;	
+}
+ul li{
+	list-style:none;	
+}
+div.img{
+	width:24px;
+	height:auto;
+	background:url("/images/fav.png") no-repeat;
+	z-index:1000;	
+	cursor:pointer;
+}
+#table{
+}
+#table th, #table td{
+	text-align:center;
+	border-top:none;
+	border-bottom:1px solid #dddddd;		
+}
+
+

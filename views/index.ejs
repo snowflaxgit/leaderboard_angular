@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+	<head>
+
+        <title>LeaderBoard</title>    	
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+        <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">	
+		
+		<script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="/javascripts/jquery-1.9.1.js"></script>	
+        <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+
+       <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script> -->
+
+        <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+        <script type="text/javascript" src="/javascripts/Chart.js"></script>	
+        <script type="text/javascript" src="/javascripts/script.js"></script>
+        <!--<script type='text/javascript' src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>	-->
+		
+    </head>
+<body>
+	<div class="container" ng-controller="LeaderBoardCtrl" >
+		<div class="row pagination-centered">		
+			<div class="header">
+				<h2 >LeaderBoard </h2>
+				<ul id="value">
+					<li><b>Highest : {{highest()}}</b></li>
+					<li><b>Total : {{total()}}</b></li>
+				</ul>
+			</div>
+				<br/>
+			<div class="users">
+				<table class="table" id="table">
+					<tr ng-repeat="user in users | orderBy:'-rate'" id="{{user._id}}">						
+						<td>{{user.name}}</td>
+						<td>{{user.rate}}</td>
+						<td><div class="img" ng-click="rating(user._id)"/>&nbsp;</div></td>
+					</tr>
+				</table>
+			</div>
+			<div class="users">
+				<canvas id="myChart" height="255" width="400"></canvas>						
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>
