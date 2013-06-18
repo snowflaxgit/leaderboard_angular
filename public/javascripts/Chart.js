@@ -148,8 +148,8 @@ window.Chart = function(context){
 	};
 
 	//Variables global to the chart
-	var width = context.canvas.width;
-	var height = context.canvas.height;
+	var width = 400;//context.canvas.width;
+	var height = 255;//context.canvas.height;
 
 
 	//High pixel density displays - multiply the size of the canvas height/width by the device pixel ratio, then scale.

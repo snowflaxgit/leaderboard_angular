@@ -53,7 +53,7 @@ exports.list = function(req, res){
 	db.collection('users', function(err, collection) {
 		collection.find().toArray(function(err, items) {
 			//result = items;
-			console.log(items);
+			//console.log(items);
 			res.json(items);	
 		});
 	});
