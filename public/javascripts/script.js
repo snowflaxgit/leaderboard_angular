@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', []);
 var socket = io.connect('http://178.79.147.154:3660', {
         'reconnect': true,
         'reconnection delay': 500,
-        'max reconnection attempts': 50
+        'max reconnection attempts': 200
     }); // socket connection 	
 
 function LeaderBoardCtrl($scope, $http) {		
