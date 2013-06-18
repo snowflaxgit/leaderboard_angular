@@ -56,7 +56,6 @@ io.sockets.on('connection', function (socket) {
 					//console.log('' + result + ' document(s) updated');					
 					 collection.find().toArray(function(err, items) {
 						//console.log(items);
-						resultGlobal = items;
 						socket.broadcast.emit('update',{items : items});
 						socket.emit('update',{items : items});
 					});				

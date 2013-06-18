@@ -1,7 +1,6 @@
 // JavaScript Document
 var myApp = angular.module('myApp', []);
 var socket = io.connect(); // socket connection 	
-var timer = 0;
 
 socket.on('connect',function(){
 	socket.emit('new',{data : ''});
