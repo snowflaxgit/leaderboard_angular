@@ -6,6 +6,11 @@ var socket = io.connect('http://178.79.147.154:3660', {
         'max reconnection attempts': 200
     }); // socket connection 	
 
+
+socket.on('disconnect', function () {
+        console.log('DISCONNESSO!!! ');
+});
+
 function LeaderBoardCtrl($scope, $http) {		
 	
   $http({method: 'GET', url: '/list'}).

@@ -53,7 +53,7 @@ io.sockets.on('connection', function (socket) {
 					//res.send({'error':'An error has occurred'});
 						console.log(err);
 				} else {
-					console.log('' + result + ' document(s) updated');					
+					//console.log('' + result + ' document(s) updated');					
 					 collection.find().toArray(function(err, items) {
 						//console.log(items);
 						socket.broadcast.emit('update',{items : items});
@@ -64,9 +64,5 @@ io.sockets.on('connection', function (socket) {
 		});
 		
 	});
-	
-	socket.on('disconnect', function () {
-        console.log('DISCONNESSO!!! ');
-    });
 	
 });
