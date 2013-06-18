@@ -1,10 +1,14 @@
 // JavaScript Document
 var myApp = angular.module('myApp', []);
-var socket = io.connect('http://178.79.147.154:3660', {
+var socket = io.connect('http://localhost', {
         'reconnect': true,
         'reconnection delay': 500,
         'max reconnection attempts': 200
     }); // socket connection 	
+
+socket.on('connect_failed', function () {
+   alert("failed to connect")
+});
 
 function LeaderBoardCtrl($scope, $http) {		
 	
