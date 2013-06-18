@@ -1,14 +1,15 @@
 // JavaScript Document
 var myApp = angular.module('myApp', []);
-var socket = io.connect('http://178.79.147.154:3660', {
-        'reconnect': true,
-        'reconnection delay': 500,
-        'max reconnection attempts': 200
-    }); // socket connection 	
+var socket = io.connect(); // socket connection 	
+var timer = 0;
 
+socket.on('connect',function(){
+	socket.emit('new',{data : ''});
+	//alert("connecte....");
+})
 
-socket.on('disconnect', function () {
-        console.log('DISCONNESSO!!! ');
+socket.on('disconnect', function() {
+	//alert("Disconnect....")
 });
 
 function LeaderBoardCtrl($scope, $http) {		
@@ -29,9 +30,9 @@ function LeaderBoardCtrl($scope, $http) {
 	   socket.emit('id', { user_id : id });
 	    // get updated item data from socket   	      		
     }	 
-	
-  socket.on('update', function (data) {
 
+
+  socket.on('update', function (data) {
 		 $http({method: 'GET', url: '/list'}).
 		  success(function(data2, status, headers, config) {
 		  	$scope.users = data2;
