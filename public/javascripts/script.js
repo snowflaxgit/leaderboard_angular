@@ -22,19 +22,16 @@ function LeaderBoardCtrl($scope, $http) {
     }	 
 	
   socket.on('update', function (data) {
-		//var items = data.items;
-//		console.log(data);
-//		$scope.users = data.items;	
-		
+
 		 $http({method: 'GET', url: '/list'}).
-		  success(function(data, status, headers, config) {
-			$scope.users = data;
-			//console.log(data);
-	  		$.chartBar($scope.users);	
+		  success(function(data2, status, headers, config) {
+		  	$scope.users = data2;
+			$scope.users = data.items;
+			$.chartBar($scope.users);
 		  }).
-		  error(function(data, status, headers, config) {
-			  console.log("err : "+data);
-		  }); 
+		  error(function(data22, status, headers, config) {
+			  console.log("err : "+data2);
+		  });
 			 
 	}); 	
   	
@@ -94,7 +91,7 @@ $(document).ready(function(e) {
 			
 		}		
 		var option = {
-			animation : false,
+			animation : false
 			//scaleShowLabels : true,
 //			scaleOverride : true,
 //			scaleSteps : steps,
@@ -104,6 +101,7 @@ $(document).ready(function(e) {
 		//Get context with jQuery - using jQuery's .get() method.
 		var ctx = $("#myChart").get(0).getContext("2d");
 		//This will get the first returned node in the jQuery collection.
+		//debugger;
 		var myNewChart = new Chart(ctx).Bar(barChartData, option);
 	};
 	
