@@ -111,7 +111,7 @@ $(document).ready(function(e) {
 		var ctx = $("#myChart").get(0).getContext("2d");
 		//This will get the first returned node in the jQuery collection.
 		//debugger;
-		//var myNewChart = new Chart(ctx).Bar(barChartData, option);
+		var myNewChart = new Chart(ctx).Bar(barChartData, option);
 	};
 	
 						
