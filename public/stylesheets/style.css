@@ -1,24 +1,28 @@
-.rate{
-	text-align:right;	
-}
 .users{
-	margin-left:20px; 
-	float:left;
-	width:400px;	
+	margin-top:20px; 
+	/*float:left;*/
+	position:relative;
+	width:100%;	
 	border:1px solid #000000;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
 	padding:10px;
 }
+.header{
+	position:relative;
+	text-align:center;
+	width:100%;	
+	margin:0 auto; 
+}
+.rate{
+	text-align:right;	
+}
+
 #fav{
 	cursor:pointer;	
 }
-.header{
-	text-align:center;
-	width:470px;	
-	margin:0 auto; 
-}
+
 #value{
 	float:right;
 	margin-top:-40px;	
