@@ -98,9 +98,10 @@ $(document).ready(function(e) {
 				}
 			]		
 			
-		}		
+		}
+		var isFirefox = typeof InstallTrigger !== 'undefined';		
 		var option = {
-			animation : false
+			animation : isFirefox
 			//scaleShowLabels : true,
 //			scaleOverride : true,
 //			scaleSteps : steps,
