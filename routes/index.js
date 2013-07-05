@@ -45,20 +45,16 @@ db.open(function(err, db) {
     }
 });
 
-exports.index = function(req, res,next){
-	res.header("Access-Control-Allow-Origin", "*");
-	res.header("Access-Control-Allow-Headers", "X-Requested-With");
+exports.index = function(req, res){
 	res.render('index');
 };
 
-exports.list = function(req, res,next){
+exports.list = function(req, res){
 	db.collection('users', function(err, collection) {
 		collection.find().toArray(function(err, items) {
 			//result = items;
 			//console.log(items);
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "X-Requested-With");
-		res.json(items);
+			res.json(items);	
 		});
 	});
 };
